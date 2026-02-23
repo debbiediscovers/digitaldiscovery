@@ -485,6 +485,11 @@
       border-color: var(--color-heading);
     }
 
+    .service-card__icon {
+      margin-bottom: var(--space-sm);
+      color: rgba(255,255,255,0.85);
+    }
+
     .service-card__title {
       font-size: 1.25rem;
       margin-bottom: var(--space-sm);
@@ -602,7 +607,7 @@
        ============================================ */
 
     .footer {
-      padding: var(--space-lg) 0;
+      padding: var(--space-sm) 0;
       border-top: none;
       text-align: center;
     }
@@ -842,6 +847,13 @@
       <div class="services__grid">
         
         <div class="service-card">
+          <div class="service-card__icon">
+            <!-- Compass icon: thin stroke, monochrome -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+            </svg>
+          </div>
           <h3 class="service-card__title">Digital Growth<br>Strategy</h3>
           <p class="service-card__description">
             We advise on end-to-end digital strategy—organic search acquisition, AI search acquisition, performance marketing, social media, email marketing, conversion optimisation, user experience, and data analytics.
@@ -852,6 +864,20 @@
         </div>
 
         <div class="service-card">
+          <div class="service-card__icon">
+            <!-- Network/nodes icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="4" height="4" rx="1"/>
+              <rect x="18" y="2" width="4" height="4" rx="1"/>
+              <rect x="10" y="10" width="4" height="4" rx="1"/>
+              <rect x="2" y="18" width="4" height="4" rx="1"/>
+              <rect x="18" y="18" width="4" height="4" rx="1"/>
+              <line x1="6" y1="4" x2="10" y2="11"/>
+              <line x1="18" y1="4" x2="14" y2="11"/>
+              <line x1="6" y1="20" x2="10" y2="13"/>
+              <line x1="18" y1="20" x2="14" y2="13"/>
+            </svg>
+          </div>
           <h3 class="service-card__title">Data & Analytics Infrastructure</h3>
           <p class="service-card__description">
             Effective strategy requires accurate measurement. We build tracking architecture, attribution models, and executive dashboards that connect marketing spend to commercial outcomes.
@@ -862,6 +888,14 @@
         </div>
 
         <div class="service-card">
+          <div class="service-card__icon">
+            <!-- Shield + magnifying glass -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z"/>
+              <circle cx="11.5" cy="11.5" r="2.5"/>
+              <line x1="13.5" y1="13.5" x2="16" y2="16"/>
+            </svg>
+          </div>
           <h3 class="service-card__title">PE/VC Digital Due Diligence</h3>
           <p class="service-card__description">
             We provide independent, commercially-focused assessment of digital assets for investment funds. Our analysis covers traffic quality, acquisition economics, technical infrastructure, and growth runway—providing clarity on digital strengths, risks, and opportunities.
@@ -923,6 +957,9 @@
           <p class="result-card__stat">$2.5M Google Ad Spend Managed</p>
           <p class="result-card__description">
             Built and managed multi-market acquisition infrastructure across Singapore, Malaysia, and Australia.
+          </p>
+          <p class="result-card__description" style="margin-top: 0.5rem;">
+            <a href="https://www.google.com/partners/agency?id=5968772853" target="_blank" rel="noopener" style="color: var(--color-heading); font-weight: 400;">Google Partner since 2025 →</a>
           </p>
         </div>
 
