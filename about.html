@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Digital Discovery and founder Deborah Kay — Cambridge economist, former Bain consultant and private equity investor, and digital advisory specialist with 10+ years of experience across Singapore, London, New York and beyond.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="About | Digital Discovery">
+  <meta property="og:description" content="The people and philosophy behind Digital Discovery — a boutique digital advisory practice founded on commercial rigour and deep operational expertise.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.digitaldiscovery.sg/about">
+  <title>About | Digital Discovery</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  
+  <!-- Fonts: Lora (headings) + Lato (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ============================================
+       DIGITAL DISCOVERY - DESIGN SYSTEM
+       ============================================ */
+
+    :root {
+      /* Theme: white (default) */
+      --color-heading: #a89a8c;
+      --color-heading-dark: #8a7d70;
+      --color-text: #333333;
+      --color-text-light: #666666;
+      --color-background: #ffffff;
+      --color-background-alt: #faf9f8;
+      --color-border: #e8e4e0;
+      
+      /* Theme: dark-charcoal */
+      --dark-charcoal-bg: #2B2C33;
+      --dark-charcoal-title: #a4947e;
+      --dark-charcoal-text: #dddddd;
+      
+      /* Theme: warm-taupe */
+      --warm-taupe-bg: #a2927d;
+      --warm-taupe-title: #535353;
+      --warm-taupe-text: #ffffff;
+      
+      /* Typography */
+      --font-heading: 'Lora', Georgia, serif;
+      --font-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+      
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 2rem;
+      --space-lg: 4rem;
+      --space-xl: 6rem;
+      --space-2xl: 8rem;
+      
+      /* Container */
+      --container-max: 1100px;
+      --container-narrow: 800px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--color-text);
+      background-color: var(--color-background);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      color: var(--color-heading);
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      margin-bottom: var(--space-md);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-sm);
+    }
+
+    p {
+      margin-bottom: var(--space-sm);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--color-heading);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    a:hover {
+      color: var(--color-heading-dark);
+    }
+
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .container--narrow {
+      max-width: var(--container-narrow);
+    }
+
+    .section {
+      padding: var(--space-xl) 0;
+    }
+
+    /* Theme: dark-charcoal */
+    .theme--dark-charcoal {
+      background-color: var(--dark-charcoal-bg);
+      color: var(--dark-charcoal-text);
+    }
+
+    .theme--dark-charcoal h1,
+    .theme--dark-charcoal h2,
+    .theme--dark-charcoal h3,
+    .theme--dark-charcoal h4 {
+      color: var(--dark-charcoal-title);
+    }
+
+    .theme--dark-charcoal p {
+      color: var(--dark-charcoal-text);
+    }
+
+    .theme--dark-charcoal a {
+      color: var(--dark-charcoal-title);
+    }
+
+    .theme--dark-charcoal a:hover {
+      color: #c4b4a0;
+    }
+
+    /* Theme: off-white */
+    .theme--off-white {
+      background-color: var(--color-background-alt);
+    }
+
+    /* Header */
+    .header {
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header.theme--dark-charcoal {
+      background: var(--dark-charcoal-bg);
+    }
+
+    .header__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo__icon {
+      height: 36px;
+      width: auto;
+    }
+
+    .logo__text {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      color: #dddddd;
+      letter-spacing: 0.02em;
+    }
+
+    .theme--dark-charcoal .logo__text {
+      color: var(--dark-charcoal-text);
+    }
+
+    .nav {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .nav__link {
+      font-size: 0.9375rem;
+      color: var(--color-text);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      transition: color 0.2s ease;
+    }
+
+    .theme--dark-charcoal .nav__link {
+      color: var(--dark-charcoal-text);
+    }
+
+    .theme--dark-charcoal .nav__link:hover {
+      color: var(--dark-charcoal-title);
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: var(--space-xl) 0;
+      text-align: center;
+    }
+
+    .page-header__title {
+      margin-bottom: var(--space-sm);
+    }
+
+    .page-header__subtitle {
+      font-size: 1.125rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .theme--dark-charcoal .page-header__subtitle {
+      color: var(--dark-charcoal-text);
+    }
+
+    /* Founder Section */
+    .founder {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .founder {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .founder__image {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+
+    .founder__image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: 4px;
+      background: var(--color-background-alt);
+    }
+
+    .founder__name {
+      font-size: 1.75rem;
+      margin-bottom: var(--space-xs);
+    }
+
+    .founder__title {
+      font-size: 1rem;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-md);
+      font-weight: 400;
+    }
+
+    .founder__bio p {
+      font-weight: 300;
+      margin-bottom: var(--space-sm);
+    }
+
+    .founder__credentials {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .founder__credentials-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-sm);
+    }
+
+    .founder__credentials-list {
+      list-style: none;
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--color-text-light);
+    }
+
+    .founder__credentials-list li {
+      margin-bottom: var(--space-xs);
+    }
+
+    /* Press Section */
+    .press__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-md);
+    }
+
+    .press-card {
+      display: block;
+      padding: var(--space-md);
+      border: 1px solid var(--color-border);
+      transition: border-color 0.2s ease;
+    }
+
+    .press-card:hover {
+      border-color: var(--color-heading);
+    }
+
+    .press-card__source {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-xs);
+    }
+
+    .press-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      color: var(--color-text);
+      margin-bottom: var(--space-sm);
+      line-height: 1.4;
+    }
+
+    .press-card__excerpt {
+      font-size: 0.9375rem;
+      font-weight: 300;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-sm);
+      font-style: italic;
+    }
+
+    .press-card__link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-heading);
+    }
+
+    .press-card--no-link {
+      cursor: default;
+    }
+
+    .press-card--no-link:hover {
+      border-color: var(--color-border);
+    }
+
+    /* Footer */
+    .footer {
+      padding: var(--space-lg) 0;
+      border-top: none;
+      text-align: center;
+    }
+
+    .footer__text {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Utilities */
+    .text-center {
+      text-align: center;
+    }
+
+    .mb-lg {
+      margin-bottom: var(--space-lg);
+    }
+
+    /* Philosophy Section */
+    .philosophy p {
+      font-weight: 300;
+      margin-bottom: var(--space-sm);
+      text-align: center;
+    }
+
+    /* About Grid - Photo left, content right */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-grid__left {
+        max-width: 280px;
+        margin: 0 auto;
+      }
+    }
+
+    .about-grid__left {
+      position: sticky;
+      top: 100px;
+    }
+
+    .about-subsection {
+      margin-bottom: var(--space-lg);
+    }
+
+    .about-subsection:last-child {
+      margin-bottom: 0;
+    }
+
+    .about-subsection h2 {
+      font-size: 1.5rem;
+      margin-bottom: var(--space-md);
+    }
+
+    .about-subsection p {
+      font-weight: 300;
+      margin-bottom: var(--space-sm);
+    }
+
+    /* ============================================
+       HAMBURGER MENU
+       ============================================ */
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-toggle__bar {
+      width: 24px;
+      height: 2px;
+      background-color: var(--dark-charcoal-text);
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ============================================
+       RESPONSIVE
+       ============================================ */
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+
+      .section { padding: var(--space-lg) 0; }
+
+      /* Mobile nav */
+      .nav-toggle { display: flex; }
+
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--dark-charcoal-bg);
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        z-index: 200;
+      }
+
+      .nav.is-open { display: flex; }
+
+      .nav__link {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        color: var(--dark-charcoal-text);
+      }
+
+      .nav__link:last-child { border-bottom: none; }
+
+      .header__inner { position: relative; }
+
+      .logo__text { display: none; }
+
+      /* About layout - stack on mobile */
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid__left {
+        position: static;
+        max-width: 220px;
+        margin: 0 auto var(--space-md);
+      }
+
+      /* Press grid */
+      .press__grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER: theme--dark-charcoal -->
+  <header class="header theme--dark-charcoal">
+    <div class="container header__inner">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="Digital Discovery" class="logo__icon">
+        <span class="logo__text">Digital Discovery</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="nav" id="main-nav">
+        <a href="index.html#what-we-do" class="nav__link">What We Do</a>
+        <a href="index.html#who-we-work-with" class="nav__link">Who We Work With</a>
+        <a href="index.html#results" class="nav__link">Results</a>
+        <a href="about.html" class="nav__link">About</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE HEADER: theme--dark-charcoal -->
+  <section class="page-header theme--dark-charcoal">
+    <div class="container">
+      <h1 class="page-header__title">About</h1>
+      <p class="page-header__subtitle">
+        The people and philosophy behind Digital Discovery.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-grid__left">
+          <img src="assets/deborah-kay.jpg" alt="Deborah Kay" class="founder__image">
+        </div>
+        <div class="about-grid__right">
+          
+          <div class="about-subsection">
+            <h2>The Philosophy</h2>
+            <p>
+              Digital Discovery is a boutique advisory practice specialising in digital growth strategy, investment due diligence, and analytics infrastructure.
+            </p>
+            <p>
+              The practice was founded on a straightforward premise: digital strategy should be held to the same commercial standards as any other business investment. We approach every engagement with the analytical rigour of management consulting and private equity, combined with deep operational expertise in digital execution.
+            </p>
+            <p>
+              Digital Discovery is intentionally small. We take on a limited number of engagements to ensure each receives the attention and senior focus it deserves.
+            </p>
+          </div>
+
+          <div class="about-subsection">
+            <h2>The Founder</h2>
+            <p>
+              Deborah Kay read Economics at Cambridge University on a Singapore Public Service Commission scholarship, graduating with First Class Honours.
+            </p>
+            <p>
+              She spent 8+ years at Bain & Company across the Singapore, Tokyo, London and New York offices, advising Fortune 500 clients on strategy across telecommunications, consumer products, retail and private equity.
+            </p>
+            <p>
+              After Bain, Deborah spent 5+ years in private equity—first at GIC managing European and Middle Eastern fund investments, then at Partners Capital, a $20B multi-asset investment office, where she was responsible for real estate investments and ran an $800M private equity real estate fund.
+            </p>
+            <p>
+              She founded Digital Discovery in 2014 to bring the rigour of consulting and private equity to digital strategy.
+            </p>
+
+            <ul style="list-style: disc; padding-left: 1.5rem; margin-top: 1.5rem; font-weight: 300; font-size: 0.9375rem; color: var(--color-text-light); line-height: 2;">
+              <li>Cambridge University, BA and MA (Economics), First Class Degree</li>
+              <li>8+ years of management consulting</li>
+              <li>5+ years of private equity and investment management</li>
+              <li>10+ years of digital advisory</li>
+              <li>Worked across Singapore, London, New York, Tokyo, Jakarta and Kuala Lumpur</li>
+              <li>Based in Singapore, fully distributed team, global reach</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRESS MENTIONS -->
+  <section class="section theme--off-white">
+    <div class="container">
+      <h2 class="text-center mb-lg">Press and Speaking Engagements</h2>
+      <div class="press__grid">
+        
+        <a href="https://econsultancy.com/the-four-most-exciting-areas-of-ai-for-marketers-in-2019" target="_blank" class="press-card">
+          <p class="press-card__source">Econsultancy</p>
+          <h3 class="press-card__title">The Four Most Exciting Areas of AI for Marketers</h3>
+          <p class="press-card__excerpt">
+            "Marketing AI expert Deborah Kay, Founder of Digital Discovery, gave an overview of the state of the art."
+          </p>
+          <span class="press-card__link">Read article →</span>
+        </a>
+
+        <a href="https://databox.com/chatbot-response-rates" target="_blank" class="press-card">
+          <p class="press-card__source">Databox</p>
+          <h3 class="press-card__title">How to Write Compelling Chatbots</h3>
+          <p class="press-card__excerpt">
+            "If you build a bot that relies on users to tap on buttons and has no NLP... then 60% of the time, the bot will fail."
+          </p>
+          <span class="press-card__link">Read article →</span>
+        </a>
+
+        <a href="https://medium.com/janis/how-agencies-collaborate-with-their-clients-on-bot-projects-9106adf5113b" target="_blank" class="press-card">
+          <p class="press-card__source">Janis.ai</p>
+          <h3 class="press-card__title">How Agencies Collaborate on Bot Projects</h3>
+          <p class="press-card__excerpt">
+            "Deborah Kay is a Dialogflow guru and can help you make the conversational experience engaging."
+          </p>
+          <span class="press-card__link">Read article →</span>
+        </a>
+
+        <a href="https://medium.com/pandorabots-blog/aiml-tutorial-putting-context-into-conversations-6bcc09343e36" target="_blank" class="press-card">
+          <p class="press-card__source">Pandorabots</p>
+          <h3 class="press-card__title">Tutorial: Putting Context into Conversations</h3>
+          <p class="press-card__excerpt">
+            "I'm going to demonstrate this by showing you how to teach your bot to respond to knock knock jokes—after seeing this article by Deborah Kay."
+          </p>
+          <span class="press-card__link">Read article →</span>
+        </a>
+
+        <a href="https://serpline.com/social-media-marketing-tools/#deborah-kay" target="_blank" class="press-card">
+          <p class="press-card__source">Serpline</p>
+          <h3 class="press-card__title">72 Experts Share Amazing Social Media Marketing Tools</h3>
+          <p class="press-card__excerpt">
+            Featured as one of 72 social media marketing experts.
+          </p>
+          <span class="press-card__link">Read article →</span>
+        </a>
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Botmakers</p>
+          <h3 class="press-card__title">Bot Experts and Influencers of 2018</h3>
+          <p class="press-card__excerpt">
+            "We decided to focus on the ones who are the most active and contribute to the industry the most."
+          </p>
+        </div>
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Chatbottle Awards</p>
+          <h3 class="press-card__title">Expert Judge, Annual Chatbottle Awards 2018</h3>
+          <p class="press-card__excerpt">
+            Appointed as one of the expert judges for the annual Chatbottle awards.
+          </p>
+        </div>
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Rise Global</p>
+          <h3 class="press-card__title">#Bottish100 Power 100 Influencers</h3>
+          <p class="press-card__excerpt">
+            Ranked #1 in Singapore on the Global #bottish100 Power 100 influencers list.
+          </p>
+        </div>
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Medium</p>
+          <h3 class="press-card__title">Top Writer in Artificial Intelligence</h3>
+          <p class="press-card__excerpt">
+            Named one of Medium's top writers in Artificial Intelligence in 2018.
+          </p>
+        </div>
+
+      </div>
+
+      <h3 class="text-center" style="margin-top: var(--space-lg); margin-bottom: var(--space-md);">Past Speaking Engagements</h3>
+      <div class="press__grid">
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Singapore Writers Festival</p>
+          <h3 class="press-card__title">Chatbots and the Human Connection</h3>
+          <p class="press-card__excerpt">November 2019</p>
+        </div>
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Econsultancy Digital Outlook</p>
+          <h3 class="press-card__title">AI in Marketing</h3>
+          <p class="press-card__excerpt">January 2019</p>
+        </div>
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Big Data and AI Asia</p>
+          <h3 class="press-card__title">Conference Speaker</h3>
+          <p class="press-card__excerpt">December 2018</p>
+        </div>
+
+        <div class="press-card press-card--no-link">
+          <p class="press-card__source">Clariden Global</p>
+          <h3 class="press-card__title">Digital Marketing & Customer Experience with AI</h3>
+          <p class="press-card__excerpt">August 2018</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER: theme--dark-charcoal -->
+  <footer class="footer theme--dark-charcoal">
+    <div class="container">
+      <p class="footer__text">© 2014–2026 Digital Discovery Pte Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+    nav.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+  </script>
+</body>
+</html>
