@@ -449,93 +449,121 @@
     }
 
     /* ============================================
-       HAMBURGER MENU
+       HAMBURGER BUTTON
        ============================================ */
 
     .nav-toggle {
-      display: none;
+      display: flex;
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
       padding: 4px;
       background: none;
       border: none;
+      z-index: 1001;
+      position: relative;
     }
 
     .nav-toggle__bar {
       width: 24px;
       height: 2px;
       background-color: var(--dark-charcoal-text);
-      transition: all 0.3s ease;
+      transition: all 0.35s ease;
       display: block;
     }
 
     .nav-toggle.is-open .nav-toggle__bar:nth-child(1) {
       transform: translateY(7px) rotate(45deg);
+      background-color: #2B2C33;
     }
-    .nav-toggle.is-open .nav-toggle__bar:nth-child(2) {
-      opacity: 0;
-    }
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(2) { opacity: 0; }
     .nav-toggle.is-open .nav-toggle__bar:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
+      background-color: #2B2C33;
     }
 
     /* ============================================
-       RESPONSIVE
+       FULLSCREEN OVERLAY MENU
        ============================================ */
+
+    .nav-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: #a2927d;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .nav-overlay.is-open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .nav-overlay__inner { text-align: center; }
+
+    .nav-overlay__link {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #2B2C33;
+      text-decoration: none;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-overlay__link:hover { opacity: 0.6; }
+
+    .nav-overlay__sub {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 400;
+      font-style: italic;
+      color: #2B2C33;
+      text-decoration: none;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .nav-overlay__sub:hover { opacity: 1; }
+
+    .nav-overlay__group { margin-bottom: 1.5rem; }
+
+    .nav-overlay__divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(43,44,51,0.25);
+      margin: 1.5rem auto;
+    }
+
+    /* Hide inline nav — use overlay instead */
+    .nav { display: none !important; }
+    .nav-toggle { display: flex; }
 
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       h2 { font-size: 1.5rem; }
-
       .section { padding: var(--space-lg) 0; }
-
-      /* Mobile nav */
-      .nav-toggle { display: flex; }
-
-      .nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--dark-charcoal-bg);
-        flex-direction: column;
-        gap: 0;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        z-index: 200;
-      }
-
-      .nav.is-open { display: flex; }
-
-      .nav__link {
-        font-size: 1rem;
-        padding: 1rem 2rem;
-        border-bottom: 1px solid rgba(255,255,255,0.08);
-        color: var(--dark-charcoal-text);
-      }
-
-      .nav__link:last-child { border-bottom: none; }
-
       .header__inner { position: relative; }
-
       .logo__text { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-grid__left { position: static; max-width: 220px; margin: 0 auto var(--space-md); }
+      .press__grid { grid-template-columns: 1fr; }
+      .nav-overlay__link { font-size: 1.75rem; }
+      .nav-overlay__sub { font-size: 1.1rem; }
+    }
 
-      /* About layout - stack on mobile */
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-grid__left {
-        position: static;
-        max-width: 220px;
-        margin: 0 auto var(--space-md);
-      }
-
-      /* Press grid */
-      .press__grid {
-        grid-template-columns: 1fr;
-      }
+    @media (min-width: 769px) {
+      .nav-overlay__link { font-size: 3rem; }
+      .nav-overlay__sub { font-size: 1.6rem; }
     }
 
     @media (max-width: 480px) {
@@ -545,6 +573,22 @@
 </head>
 <body>
 
+  <!-- FULLSCREEN NAV OVERLAY -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <div class="nav-overlay__inner">
+      <div class="nav-overlay__group">
+        <a href="index.html" class="nav-overlay__link">Home</a>
+        <a href="index.html#what-we-do" class="nav-overlay__sub">What We Do</a>
+        <a href="index.html#who-we-work-with" class="nav-overlay__sub">Who We Work With</a>
+        <a href="index.html#results" class="nav-overlay__sub">Results</a>
+      </div>
+      <div class="nav-overlay__divider"></div>
+      <a href="about.html" class="nav-overlay__link">About</a>
+      <div class="nav-overlay__divider"></div>
+      <a href="index.html#contact" class="nav-overlay__link">Contact</a>
+    </div>
+  </div>
+
   <!-- HEADER: theme--dark-charcoal -->
   <header class="header theme--dark-charcoal">
     <div class="container header__inner">
@@ -552,7 +596,7 @@
         <img src="assets/logo.png" alt="Digital Discovery" class="logo__icon">
         <span class="logo__text">Digital Discovery</span>
       </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-overlay">
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
         <span class="nav-toggle__bar"></span>
@@ -595,7 +639,7 @@
               The practice was founded on a straightforward premise: digital strategy should be held to the same commercial standards as any other business investment. We approach every engagement with the analytical rigour of management consulting and private equity, combined with deep operational expertise in digital execution.
             </p>
             <p>
-              Digital Discovery is intentionally selective. We take on a limited number of engagements to ensure each receives the attention and senior focus it deserves.
+              Digital Discovery is intentionally small. We take on a limited number of engagements to ensure each receives the attention and senior focus it deserves.
             </p>
           </div>
 
@@ -754,18 +798,31 @@
 
   <script>
     const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('main-nav');
+    const overlay = document.getElementById('nav-overlay');
+
     toggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('is-open');
+      const isOpen = overlay.classList.toggle('is-open');
       toggle.classList.toggle('is-open', isOpen);
       toggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
-    nav.querySelectorAll('.nav__link').forEach(link => {
+
+    overlay.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        nav.classList.remove('is-open');
+        overlay.classList.remove('is-open');
         toggle.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
       });
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+        overlay.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+      }
     });
   </script>
 </body>

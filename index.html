@@ -757,9 +757,15 @@
       .section { padding: var(--space-lg) 0; }
       .header__inner { position: relative; }
       .clients__logo { height: 32px; }
-      .clients__logo--lg { height: 52px; }
-      .clients__logo--xl { height: 70px; }
-      .logo__text { display: none; }
+      .clients__logo--lg { height: 48px; }
+      .clients__logo--xl { height: 60px; }
+      .clients__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: var(--space-md);
+      }
+      .logo__text { display: block; font-size: 0.9rem; }
       .services__grid { grid-template-columns: 1fr; gap: var(--space-md); }
       .results__grid { grid-template-columns: 1fr; }
       .nav-overlay__link { font-size: 1.75rem; }
@@ -838,7 +844,7 @@
         <div class="service-card">
           <h3 class="service-card__title">Digital Growth<br>Strategy</h3>
           <p class="service-card__description">
-            We advise on end-to-end digital transformation—organic search acquisition, AI search acquisition, performance marketing, social media, email marketing, conversion optimisation, user experience, and analytics.
+            We advise on end-to-end digital strategy—organic search acquisition, AI search acquisition, performance marketing, social media, email marketing, conversion optimisation, user experience, and data analytics.
           </p>
           <p class="service-card__description">
             We leverage AI and automation to accelerate execution, uncover insights, and drive efficiency across every channel.
@@ -899,7 +905,7 @@
         <div class="result-card">
           <p class="result-card__stat">9x User, 6x Lead and 2.5x Revenue Growth</p>
           <p class="result-card__description">
-            Scaled a national healthcare provider from 100K to ~1M annual website users over five years, establishing market leadership across multiple service categories. #1 ranked keywords increased from ~300 to &gt;1,400.
+            Scaled a client from 100K to ~1M annual website users over five years, establishing market leadership across multiple service categories. #1 ranked keywords increased from ~300 to &gt;1,400.
           </p>
           <p class="result-card__description" style="margin-top: 0.5rem;">
             Leads grew by 6x and revenues grew by 2.5x over the same period.
@@ -944,15 +950,12 @@
   <section id="contact" style="background-color: #a2927d; padding: var(--space-2xl) 0;">
     <div class="container">
       <div class="cta" style="padding: 0;">
-        <h2 style="color: #535353;">Begin a Conversation</h2>
-        <p style="max-width: 600px; margin: 0 auto var(--space-md); color: #ffffff; font-weight: 300; font-size: 1.0625rem; line-height: 1.8;">
+        <h2 style="color: #2B2C33;">Explore Working with Us</h2>
+        <p style="max-width: 600px; margin: 0 auto var(--space-md); color: #2B2C33; font-weight: 300; font-size: 1.0625rem; line-height: 1.8;">
           We are deliberately selective on who we work with, and focus on a small number of clients at any one time. Engagements are typically by referral or invitation.
         </p>
         <p class="cta__email" style="font-size: 1.1rem;">
-          <a href="mailto:enquiries@digitaldiscovery.sg" style="color: #535353; border-bottom: 1px solid rgba(83,83,83,0.4);">enquiries@digitaldiscovery.sg</a>
-        </p>
-        <p class="cta__note" style="color: #2B2C33;">
-          All enquiries receive a personal response. We do not employ forms or automated systems.
+          <a href="mailto:enquiries@digitaldiscovery.sg" style="color: #2B2C33; border-bottom: 1px solid rgba(43,44,51,0.4);">enquiries@digitaldiscovery.sg</a>
         </p>
       </div>
     </div>
@@ -988,4 +991,13 @@
 
     // Close on Escape key
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && overlay
+      if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+        overlay.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', false);
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+</body>
+</html>
