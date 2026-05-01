@@ -39,33 +39,6 @@
        ============================================ */
 
     :root {
-      /* ============================================
-         THEME COLOURS - Easy Reference Names
-         ============================================
-         
-         THEME: dark-charcoal
-         - Background: #2B2C33
-         - Title: #a4947e
-         - Text: #dddddd
-         
-         THEME: warm-taupe
-         - Background: #a2927d
-         - Title: #535353
-         - Text: #ffffff
-         
-         THEME: white
-         - Background: #ffffff
-         - Title: #a89a8c
-         - Text: #333333
-         
-         THEME: off-white
-         - Background: #faf9f8
-         - Title: #a89a8c
-         - Text: #666666
-         
-         ============================================ */
-      
-      /* Theme: white (default) */
       --color-heading: #a89a8c;
       --color-heading-dark: #8a7d70;
       --color-text: #333333;
@@ -74,21 +47,17 @@
       --color-background-alt: #faf9f8;
       --color-border: #e8e4e0;
       
-      /* Theme: dark-charcoal */
       --dark-charcoal-bg: #2B2C33;
       --dark-charcoal-title: #a4947e;
       --dark-charcoal-text: #dddddd;
       
-      /* Theme: warm-taupe */
       --warm-taupe-bg: #a2927d;
       --warm-taupe-title: #535353;
       --warm-taupe-text: #ffffff;
       
-      /* Typography */
       --font-heading: 'Lora', Georgia, serif;
       --font-body: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
       
-      /* Spacing */
       --space-xs: 0.5rem;
       --space-sm: 1rem;
       --space-md: 2rem;
@@ -96,14 +65,9 @@
       --space-xl: 6rem;
       --space-2xl: 8rem;
       
-      /* Container */
       --container-max: 1100px;
       --container-narrow: 800px;
     }
-
-    /* ============================================
-       RESET & BASE
-       ============================================ */
 
     *, *::before, *::after {
       box-sizing: border-box;
@@ -127,10 +91,6 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ============================================
-       TYPOGRAPHY
-       ============================================ */
-
     h1, h2, h3, h4 {
       font-family: var(--font-heading);
       font-weight: 400;
@@ -138,33 +98,13 @@
       line-height: 1.3;
     }
 
-    h1 {
-      font-size: 2.75rem;
-      margin-bottom: var(--space-md);
-    }
+    h1 { font-size: 2.75rem; margin-bottom: var(--space-md); }
+    h2 { font-size: 2rem; margin-bottom: var(--space-md); }
+    h3 { font-size: 1.5rem; margin-bottom: var(--space-sm); }
+    h4 { font-size: 1.125rem; margin-bottom: var(--space-xs); }
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: var(--space-md);
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: var(--space-sm);
-    }
-
-    h4 {
-      font-size: 1.125rem;
-      margin-bottom: var(--space-xs);
-    }
-
-    p {
-      margin-bottom: var(--space-sm);
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
+    p { margin-bottom: var(--space-sm); }
+    p:last-child { margin-bottom: 0; }
 
     a {
       color: var(--color-heading);
@@ -172,13 +112,7 @@
       transition: color 0.2s ease;
     }
 
-    a:hover {
-      color: var(--color-heading-dark);
-    }
-
-    /* ============================================
-       LAYOUT
-       ============================================ */
+    a:hover { color: var(--color-heading-dark); }
 
     .container {
       max-width: var(--container-max);
@@ -186,22 +120,12 @@
       padding: 0 var(--space-md);
     }
 
-    .container--narrow {
-      max-width: var(--container-narrow);
-    }
+    .container--narrow { max-width: var(--container-narrow); }
 
-    .section {
-      padding: var(--space-xl) 0;
-    }
+    .section { padding: var(--space-xl) 0; }
+    .section--alt { background-color: var(--color-background-alt); }
 
-    .section--alt {
-      background-color: var(--color-background-alt);
-    }
-
-    /* ============================================
-       THEME: dark-charcoal
-       Use: Header, Footer, "Who We Work With"
-       ============================================ */
+    /* THEME: dark-charcoal */
     .theme--dark-charcoal {
       background-color: var(--dark-charcoal-bg);
       color: var(--dark-charcoal-text);
@@ -210,21 +134,11 @@
     .theme--dark-charcoal h1,
     .theme--dark-charcoal h2,
     .theme--dark-charcoal h3,
-    .theme--dark-charcoal h4 {
-      color: var(--dark-charcoal-title);
-    }
+    .theme--dark-charcoal h4 { color: var(--dark-charcoal-title); }
 
-    .theme--dark-charcoal p {
-      color: var(--dark-charcoal-text);
-    }
-
-    .theme--dark-charcoal a {
-      color: var(--dark-charcoal-title);
-    }
-
-    .theme--dark-charcoal a:hover {
-      color: #c4b4a0;
-    }
+    .theme--dark-charcoal p { color: var(--dark-charcoal-text); }
+    .theme--dark-charcoal a { color: var(--dark-charcoal-title); }
+    .theme--dark-charcoal a:hover { color: #c4b4a0; }
 
     .theme--dark-charcoal .btn {
       border-color: var(--dark-charcoal-title);
@@ -237,26 +151,12 @@
       color: var(--dark-charcoal-title);
     }
 
-    .theme--dark-charcoal .nav__link {
-      color: var(--dark-charcoal-text);
-    }
+    .theme--dark-charcoal .nav__link { color: var(--dark-charcoal-text); }
+    .theme--dark-charcoal .nav__link:hover { color: var(--dark-charcoal-title); }
+    .theme--dark-charcoal .logo__text { color: var(--dark-charcoal-text); }
+    .theme--dark-charcoal .footer__text { color: rgba(221, 221, 221, 0.6); }
 
-    .theme--dark-charcoal .nav__link:hover {
-      color: var(--dark-charcoal-title);
-    }
-
-    .theme--dark-charcoal .logo__text {
-      color: var(--dark-charcoal-text);
-    }
-
-    .theme--dark-charcoal .footer__text {
-      color: rgba(221, 221, 221, 0.6);
-    }
-
-    /* ============================================
-       THEME: warm-taupe
-       Use: "What We Do" section
-       ============================================ */
+    /* THEME: warm-taupe */
     .theme--warm-taupe {
       background-color: var(--warm-taupe-bg);
       color: var(--warm-taupe-text);
@@ -265,49 +165,17 @@
     .theme--warm-taupe h1,
     .theme--warm-taupe h2,
     .theme--warm-taupe h3,
-    .theme--warm-taupe h4 {
-      color: var(--warm-taupe-title);
-    }
+    .theme--warm-taupe h4 { color: var(--warm-taupe-title); }
 
-    .theme--warm-taupe p {
-      color: var(--warm-taupe-text);
-    }
+    .theme--warm-taupe p { color: var(--warm-taupe-text); }
+    .theme--warm-taupe .service-card__description { color: #ffffff; }
+    .theme--warm-taupe .service-card { border-color: rgba(255,255,255,0.7); }
+    .theme--warm-taupe .service-card:hover { border-color: #ffffff; opacity: 0.92; }
+    .theme--warm-taupe .service-card__title { color: var(--warm-taupe-title); }
 
-    .theme--warm-taupe .service-card__description {
-      color: #ffffff;
-    }
+    .theme--off-white { background-color: var(--color-background-alt); }
 
-    .theme--warm-taupe .service-card {
-      border-color: rgba(255,255,255,0.7);
-    }
-
-    .theme--warm-taupe .service-card:hover {
-      border-color: #ffffff;
-      opacity: 0.92;
-    }
-
-    .theme--warm-taupe .service-card__title {
-      color: var(--warm-taupe-title);
-    }
-
-    /* ============================================
-       THEME: white (default)
-       Use: Trusted By, Selected Results
-       ============================================ */
-    /* Default styles already apply */
-
-    /* ============================================
-       THEME: off-white
-       Use: Alternate sections
-       ============================================ */
-    .theme--off-white {
-      background-color: var(--color-background-alt);
-    }
-
-    /* ============================================
-       HEADER & NAVIGATION
-       ============================================ */
-
+    /* HEADER */
     .header {
       padding: var(--space-sm) 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -316,9 +184,7 @@
       z-index: 100;
     }
 
-    .header.theme--dark-charcoal {
-      background: var(--dark-charcoal-bg);
-    }
+    .header.theme--dark-charcoal { background: var(--dark-charcoal-bg); }
 
     .header__inner {
       display: flex;
@@ -332,10 +198,7 @@
       gap: 0.75rem;
     }
 
-    .logo__icon {
-      height: 36px;
-      width: auto;
-    }
+    .logo__icon { height: 36px; width: auto; }
 
     .logo__text {
       font-family: var(--font-heading);
@@ -357,14 +220,9 @@
       transition: color 0.2s ease;
     }
 
-    .nav__link:hover {
-      color: var(--color-heading);
-    }
+    .nav__link:hover { color: var(--color-heading); }
 
-    /* ============================================
-       HERO SECTION
-       ============================================ */
-
+    /* HERO */
     .hero {
       padding: var(--space-2xl) 0;
       text-align: center;
@@ -384,14 +242,9 @@
       line-height: 1.8;
     }
 
-    .theme--dark-charcoal .hero__subhead {
-      color: var(--dark-charcoal-text);
-    }
+    .theme--dark-charcoal .hero__subhead { color: var(--dark-charcoal-text); }
 
-    /* ============================================
-       BUTTONS
-       ============================================ */
-
+    /* BUTTONS */
     .btn {
       display: inline-block;
       font-family: var(--font-body);
@@ -421,10 +274,7 @@
       border-color: var(--color-heading-dark);
     }
 
-    /* ============================================
-       CLIENT LOGOS
-       ============================================ */
-
+    /* CLIENT LOGOS */
     .clients {
       text-align: center;
       padding: var(--space-lg) 0;
@@ -457,29 +307,18 @@
       transition: opacity 0.2s ease;
     }
 
-    .clients__logo--lg {
-      height: 72px;
-    }
+    .clients__logo--lg { height: 72px; }
+    .clients__logo--xl { height: 192px; }
+    .clients__logo:hover { opacity: 1; }
 
-    .clients__logo--xl {
-      height: 192px;
-    }
-
-    .clients__logo:hover {
-      opacity: 1;
-    }
-
-    /* ============================================
-       SERVICES / CARDS
-       ============================================ */
-
+    /* SERVICES / CARDS */
     .services__grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: var(--space-lg);
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 600px) {
       .services__grid {
         grid-template-columns: 1fr;
         gap: var(--space-md);
@@ -492,9 +331,7 @@
       transition: border-color 0.2s ease;
     }
 
-    .service-card:hover {
-      border-color: var(--color-heading);
-    }
+    .service-card:hover { border-color: var(--color-heading); }
 
     .service-card__icon {
       margin-bottom: var(--space-sm);
@@ -514,14 +351,9 @@
       margin-bottom: var(--space-sm);
     }
 
-    .service-card__description:last-child {
-      margin-bottom: 0;
-    }
+    .service-card__description:last-child { margin-bottom: 0; }
 
-    /* ============================================
-       RESULTS / STATS
-       ============================================ */
-
+    /* RESULTS */
     .results__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -529,9 +361,7 @@
     }
 
     @media (max-width: 900px) {
-      .results__grid {
-        grid-template-columns: 1fr;
-      }
+      .results__grid { grid-template-columns: 1fr; }
     }
 
     .result-card {
@@ -554,23 +384,15 @@
       line-height: 1.6;
     }
 
-    /* ============================================
-       TEXT SECTIONS
-       ============================================ */
-
+    /* TEXT SECTIONS */
     .text-section {
       max-width: var(--container-narrow);
       margin: 0 auto;
     }
 
-    .text-section p {
-      font-weight: 300;
-    }
+    .text-section p { font-weight: 300; }
 
-    /* ============================================
-       CONTACT / CTA
-       ============================================ */
-
+    /* CONTACT / CTA */
     .cta {
       text-align: center;
       padding: var(--space-xl) 0;
@@ -588,9 +410,7 @@
       padding-bottom: 2px;
     }
 
-    .cta__email a:hover {
-      border-color: var(--color-heading-dark);
-    }
+    .cta__email a:hover { border-color: var(--color-heading-dark); }
 
     .cta__note {
       margin-top: var(--space-md);
@@ -609,14 +429,9 @@
       border-color: #c4b4a0;
     }
 
-    .theme--dark-charcoal .cta__note {
-      color: var(--dark-charcoal-text);
-    }
+    .theme--dark-charcoal .cta__note { color: var(--dark-charcoal-text); }
 
-    /* ============================================
-       FOOTER
-       ============================================ */
-
+    /* FOOTER */
     .footer {
       padding: var(--space-sm) 0;
       border-top: none;
@@ -629,26 +444,16 @@
       color: rgba(255, 255, 255, 0.6);
     }
 
-    /* ============================================
-       UTILITY CLASSES
-       ============================================ */
-
-    .text-center {
-      text-align: center;
-    }
-
+    /* UTILITY */
+    .text-center { text-align: center; }
     .mb-0 { margin-bottom: 0; }
     .mb-sm { margin-bottom: var(--space-sm); }
     .mb-md { margin-bottom: var(--space-md); }
     .mb-lg { margin-bottom: var(--space-lg); }
-
     .mt-md { margin-top: var(--space-md); }
     .mt-lg { margin-top: var(--space-lg); }
 
-    /* ============================================
-       HAMBURGER BUTTON
-       ============================================ */
-
+    /* HAMBURGER */
     .nav-toggle {
       display: flex;
       flex-direction: column;
@@ -674,19 +479,14 @@
       background-color: #2B2C33;
     }
 
-    .nav-toggle.is-open .nav-toggle__bar:nth-child(2) {
-      opacity: 0;
-    }
+    .nav-toggle.is-open .nav-toggle__bar:nth-child(2) { opacity: 0; }
 
     .nav-toggle.is-open .nav-toggle__bar:nth-child(3) {
       transform: translateY(-7px) rotate(-45deg);
       background-color: #2B2C33;
     }
 
-    /* ============================================
-       FULLSCREEN OVERLAY MENU
-       ============================================ */
-
+    /* FULLSCREEN OVERLAY MENU */
     .nav-overlay {
       position: fixed;
       inset: 0;
@@ -705,11 +505,8 @@
       pointer-events: all;
     }
 
-    .nav-overlay__inner {
-      text-align: center;
-    }
+    .nav-overlay__inner { text-align: center; }
 
-    /* Top-level links */
     .nav-overlay__link {
       display: block;
       font-family: var(--font-heading);
@@ -723,11 +520,8 @@
       letter-spacing: 0.01em;
     }
 
-    .nav-overlay__link:hover {
-      opacity: 0.6;
-    }
+    .nav-overlay__link:hover { opacity: 0.6; }
 
-    /* Sub-links (indented, slightly smaller) */
     .nav-overlay__sub {
       display: block;
       font-family: var(--font-heading);
@@ -741,13 +535,9 @@
       transition: opacity 0.2s ease;
     }
 
-    .nav-overlay__sub:hover {
-      opacity: 1;
-    }
+    .nav-overlay__sub:hover { opacity: 1; }
 
-    .nav-overlay__group {
-      margin-bottom: 1.5rem;
-    }
+    .nav-overlay__group { margin-bottom: 1.5rem; }
 
     .nav-overlay__divider {
       width: 40px;
@@ -756,14 +546,8 @@
       margin: 1.5rem auto;
     }
 
-    /* ============================================
-       RESPONSIVE
-       ============================================ */
-
-    /* Hide inline nav always — we use the overlay */
+    /* RESPONSIVE */
     .nav { display: none !important; }
-
-    /* Hamburger always visible */
     .nav-toggle { display: flex; }
 
     @media (max-width: 768px) {
@@ -782,7 +566,6 @@
         gap: var(--space-md);
       }
       .logo__text { display: block; font-size: 0.9rem; }
-      .services__grid { grid-template-columns: 1fr; gap: var(--space-md); }
       .results__grid { grid-template-columns: 1fr; }
       .nav-overlay__link { font-size: 1.75rem; }
       .nav-overlay__sub { font-size: 1.1rem; }
@@ -798,6 +581,7 @@
       .hero__subhead { font-size: 1rem; }
       .clients__grid { gap: var(--space-sm) var(--space-md); }
     }
+
   </style>
 </head>
 <body>
@@ -849,7 +633,7 @@
     <div class="container">
       <h1 class="hero__headline">Digital Advisory for Companies That Demand Results</h1>
       <p class="hero__subhead">
-        Digital Discovery partners with growth-focused businesses and investment funds to build digital assets that deliver commercial outcomes. We bring ten years of digital execution and the rigour of management consulting and private equity to every engagement.
+        Digital Discovery partners with growth-focused businesses and investment funds to build digital assets, shape narratives, and drive measurable outcomes. We bring thirty years of combined experience in digital execution, communications, management consulting and private equity to every engagement.
       </p>
       <a href="#contact" class="btn">Get in Touch</a>
     </div>
@@ -868,6 +652,7 @@
           </p>
           <p class="service-card__description">
             As a certified <a href="https://www.google.com/partners/agency?id=5968772853" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(255,255,255,0.4); font-weight: inherit;">Google Partner</a>, we provide end-to-end Google Ads management: from campaign architecture, bid strategy through to attribution and performance reporting. We manage spend with the rigour of a CFO, with every dollar accountable for return.
+          </p>
         </div>
 
         <div class="service-card">
@@ -876,10 +661,11 @@
             Effective strategy requires accurate measurement. We build tracking architecture, attribution models, and executive dashboards that connect marketing spend to commercial outcomes.
           </p>
           <p class="service-card__description">
-            Applying the rigour of management consulting and private equity, we deliver results-oriented integrated strategies, not siloed tactics.</p>
-           <p class="service-card__description">
-             We are obsessed with measurement and relentless about performance.
-           </p>
+            Applying the rigour of management consulting and private equity, we deliver results-oriented integrated strategies, not siloed tactics.
+          </p>
+          <p class="service-card__description">
+            We are obsessed with measurement and relentless about performance.
+          </p>
         </div>
 
         <div class="service-card">
@@ -889,6 +675,16 @@
           </p>
           <p class="service-card__description">
             Beyond diligence, we advise on the digital growth strategy required to achieve target exit valuations, and partner with portfolio companies post-acquisition to execute on value creation.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3 class="service-card__title">PR & Communications</h3>
+          <p class="service-card__description">
+            We help clients shape and amplify their narratives with speed and precision. From strategy to execution, we manage the full communications lifecycle — combining exceptional storytelling and editorial craft with deep social media expertise and targeted amplification at speed.
+          </p>
+          <p class="service-card__description">
+            Rigorous, data-driven results measurement ensures every campaign is designed for impact.
           </p>
         </div>
 
@@ -1000,7 +796,6 @@
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close on any link click
     overlay.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         overlay.classList.remove('is-open');
@@ -1010,7 +805,6 @@
       });
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
         overlay.classList.remove('is-open');
